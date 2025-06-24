@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Floating Vertical Carousel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles.css">
+  <style>
+    body {
+      background: #f8f8f8;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .carousel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 900px;
+      max-width: 98vw;
+      height: 400px;
+      margin: 0 auto;
+      perspective: 1200px;
+    }
+    .carousel-card {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      width: 260px;
+      height: 360px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+      margin: 0 -60px;
+      position: relative;
+      transition: 
+        transform 0.4s cubic-bezier(.4,2,.6,1),
+        box-shadow 0.3s,
+        z-index 0s;
+      z-index: 1;
+      overflow: hidden;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    .carousel-card.selected {
+      transform: scale(1.13) translateY(-20px);
+      z-index: 3;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+      opacity: 1;
+      cursor: default;
+    }
+    .carousel-card.left,
+    .carousel-card.right {
+      z-index: 2;
+      opacity: 0.85;
+      filter: blur(0.5px);
+    }
+    .carousel-card img {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      display: block;
+    }
+    .carousel-info {
+      width: 50%;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #eaf6ea;
+      color: #333;
+      font-size: 1.05em;
+      border-left: 2px solid #4a7c59;
+    }
+    .carousel-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 0.7em;
+      color: #4a7c59;
+    }
+    .carousel-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #4a7c59;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 2em;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0.85;
+      transition: background 0.2s;
+    }
+    .carousel-nav-btn:hover {
+      background: #355c3a;
+    }
+    .carousel-nav-btn.left {
+      left: -60px;
+    }
+    .carousel-nav-btn.right {
+      right: -60px;
+    }
+    @media (max-width: 1100px) {
+      .carousel {
+        width: 98vw;
+      }
+      .carousel-card {
+        width: 200px;
+        height: 300px;
+        margin: 0 -40px;
+      }
+    }
+    @media (max-width: 700px) {
+      .carousel {
+        width: 100vw;
+        height: 260px;
+      }
+      .carousel-card {
+        width: 120px;
+        height: 200px;
+        margin: 0 -20px;
+      }
+      .carousel-info {
+        font-size: 0.95em;
+        padding: 10px 6px;
+      }
+      .carousel-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3em;
+        left: -30px;
+        right: -30px;
+      }
+    }
+  </style>
+</head>
+<body>
+      <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Herbs by Name</a></li>
+          <li><a href="#">Herbs by Chakra</a></li>
+          <li><a href="#">Herbs by Purpose</a></li>
+          <li><a href="#">Herbs by Chemistry</a></li>
+          <li><a href="#">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="#">Herbs by Distributor</a></li>
+          <li><a href="#">Herbs by Color</a></li>
+          <li><a href="#">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+  <div class="carousel-container">
+    <div class="carousel">
+      <button class="carousel-nav-btn left" onclick="prevCard()" aria-label="Previous">&#8592;</button>
+      <div id="carouselCards"></div>
+      <button class="carousel-nav-btn right" onclick="nextCard()" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <script>
+    // Example data for 8 rectangles
+    const cards = [
+      {
+        img: "images/herb1.jpg",
+        title: "Herb 1",
+        info: "Herb 1 is known for its calming properties and is often used in teas.",
+        link: "#"
+      },
+      {
+        img: "images/herb2.jpg",
+        title: "Herb 2",
+        info: "Herb 2 supports digestion and adds flavor to many dishes.",
+        link: "#"
+      },
+      {
+        img: "images/herb3.jpg",
+        title: "Herb 3",
+        info: "Herb 3 is a lemon-scented herb that helps reduce stress.",
+        link: "#"
+      },
+      {
+        img: "images/herb4.jpg",
+        title: "Herb 4",
+        info: "Herb 4 is used for its soothing effects on the skin.",
+        link: "#"
+      },
+      {
+        img: "images/herb5.jpg",
+        title: "Herb 5",
+        info: "Herb 5 is a classic culinary herb with a fresh aroma.",
+        link: "#"
+      },
+      {
+        img: "images/herb6.jpg",
+        title: "Herb 6",
+        info: "Herb 6 is valued for its immune-boosting properties.",
+        link: "#"
+      },
+      {
+        img: "images/herb7.jpg",
+        title: "Herb 7",
+        info: "Herb 7 is often used in traditional medicine for relaxation.",
+        link: "#"
+      },
+      {
+        img: "images/herb8.jpg",
+        title: "Herb 8",
+        info: "Herb 8 is a vibrant herb used in both food and teas.",
+        link: "#"
+      }
+    ];
+
+    let selected = 0;
+
+    function renderCarousel() {
+      const container = document.getElementById('carouselCards');
+      container.innerHTML = '';
+      // Only show 3 cards: selected, and one before/after (with wrap)
+      const total = cards.length;
+      const prev = (selected - 1 + total) % total;
+      const next = (selected + 1) % total;
+      const show = [prev, selected, next];
+
+      show.forEach((idx, i) => {
+        const card = cards[idx];
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'carousel-card' +
+          (i === 1 ? ' selected' : i === 0 ? ' left' : ' right');
+        cardDiv.innerHTML = `
+          <a href="${card.link}" style="width:50%;height:100%;display:block;">
+            <img src="${card.img}" alt="${card.title}">
+          </a>
+          <div class="carousel-info">
+            <div class="carousel-title">${card.title}</div>
+            <div>${card.info}</div>
+          </div>
+        `;
+        container.appendChild(cardDiv);
+      });
+    }
+
+    function prevCard() {
+      selected = (selected - 1 + cards.length) % cards.length;
+      renderCarousel();
+    }
+    function nextCard() {
+      selected = (selected + 1) % cards.length;
+      renderCarousel();
+    }
+
+    // Optional: swipe support for mobile
+    let touchStartX = null;
+    document.getElementById('carouselCards').addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    document.getElementById('carouselCards').addEventListener('touchend', function(e) {
+      if (touchStartX === null) return;
+      let touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX - touchStartX > 50) prevCard();
+      if (touchStartX - touchEndX > 50) nextCard();
+      touchStartX = null;
+    });
+
+    renderCarousel();
+  </script>
+</body>
+</html>
