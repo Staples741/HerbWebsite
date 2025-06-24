@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Herb Profiles About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .hero-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    @media (max-width: 700px) {
+      .hero-image {
+        height: 140px;
+      }
+    }
+    .homepage-container {
+      background: #fff;
+      max-width: 600px;
+      margin: 2.5rem auto 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 2rem;
+      position: relative;
+      top: 0;
+    }
+    @media (max-width: 600px) {
+      .homepage-container {
+        padding: 1rem;
+        margin-top: 1.2rem;
+      }
+    }
+
+    .carousel-overlay {
+    position: absolute;
+    left: 50%;
+    top: 70px; /* adjust as needed to sit below navbar */
+    transform: translateX(-50%);
+    width: 340px;
+    height: 120px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    overflow: hidden;
+    /* Overlap hero image */
+    margin-bottom: -60px;
+  }
+  .carousel-img {
+    width: 220px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .carousel-arrow {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    padding: 0 10px;
+    transition: color 0.2s;
+  }
+  .carousel-arrow:hover {
+    color: #00796b;
+  }
+  @media (max-width: 500px) {
+    .carousel-overlay {
+      width: 90vw;
+      height: 70px;
+    }
+    .carousel-img {
+      width: 120px;
+      height: 60px;
+    }
+  }
+
+   .icon-links-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2.5rem auto 0 auto;
+    max-width: 600px;
+  }
+  .icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1.2rem 1rem 1rem 1rem;
+    transition: box-shadow 0.2s;
+    width: 120px;
+  }
+  .icon-link:hover {
+    box-shadow: 0 4px 16px rgba(0,121,107,0.18);
+  }
+  .icon-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 0.7rem;
+  }
+  .icon-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  @media (max-width: 600px) {
+    .icon-links-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .icon-link {
+      width: 90vw;
+      max-width: 300px;
+    }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Herbs by Name</a></li>
+          <li><a href="#">Herbs by Chakra</a></li>
+          <li><a href="#">Herbs by Purpose</a></li>
+          <li><a href="#">Herbs by Chemistry</a></li>
+          <li><a href="#">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="#">Herbs by Distributor</a></li>
+          <li><a href="#">Herbs by Color</a></li>
+          <li><a href="#">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+
+<div class="carousel-overlay">
+  <button class="carousel-arrow left">&#8592;</button>
+  <img src="carousel1.jpg" alt="Overlay 1" class="carousel-img">
+  <button class="carousel-arrow right">&#8594;</button>
+</div>
+
+  <img src="your-hero-image.jpg" alt="Herbal Banner" class="hero-image">
+
+<div class="icon-links-row">
+  <a href="#" class="icon-link">
+    <img src="icon1.png" alt="Browse Herbs" class="icon-img">
+    <div class="icon-title">What is Kundalini?</div>
+  </a>
+  <a href="#" class="icon-link">
+    <img src="icon2.png" alt="Learn Chakras" class="icon-img">
+    <div class="icon-title">What is Kundalini Herbalism?</div>
+  </a>
+  <a href="#" class="icon-link">
+    <img src="icon3.png" alt="Shop Herbs" class="icon-img">
+    <div class="icon-title">What is Herbalism?</div>
+  </a>
+</div>
+
+
+
+  <script>
+  const carouselImages = [
+    'carousel1.jpg',
+    'carousel2.jpg',
+    'carousel3.jpg'
+  ];
+  let current = 0;
+  const img = document.querySelector('.carousel-img');
+  document.querySelector('.carousel-arrow.left').onclick = () => {
+    current = (current - 1 + carouselImages.length) % carouselImages.length;
+    img.src = carouselImages[current];
+  };
+  document.querySelector('.carousel-arrow.right').onclick = () => {
+    current = (current + 1) % carouselImages.length;
+    img.src = carouselImages[current];
+  };
+</script>
+  <footer>
+    <p>&copy; 2023 Kundalini Herbalism. All rights reserved.</p>
+  </footer>
+</body>
+</html>

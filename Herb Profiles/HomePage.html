@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Herb Profiles Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .hero-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    @media (max-width: 700px) {
+      .hero-image {
+        height: 140px;
+      }
+    }
+    .homepage-container {
+      background: #fff;
+      max-width: 600px;
+      margin: 2.5rem auto 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 2rem;
+      position: relative;
+      top: 0;
+    }
+    @media (max-width: 600px) {
+      .homepage-container {
+        padding: 1rem;
+        margin-top: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Herbs by Name</a></li>
+          <li><a href="#">Herbs by Chakra</a></li>
+          <li><a href="#">Herbs by Purpose</a></li>
+          <li><a href="#">Herbs by Chemistry</a></li>
+          <li><a href="#">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="#">Herbs by Distributor</a></li>
+          <li><a href="#">Herbs by Color</a></li>
+          <li><a href="#">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+
+  <img src="your-hero-image.jpg" alt="Herbal Banner" class="hero-image">
+
+  <div class="homepage-container">
+    <h1>Kundalini Herbalism</h1>
+    <p>
+      Discover the world of herbs, their uses, history, and healing properties. Explore our library, learn about chakras, and find trusted vendors.
+    </p>
+    <h2>Featured Sections</h2>
+    <ul>
+      <li><a href="#">Browse Herbs</a></li>
+      <li><a href="#">Learn About Chakras</a></li>
+      <li><a href="#">Herbal Education Videos</a></li>
+      <li><a href="#">Shop for Herbs</a></li>
+    </ul>
+    <h2>What is Kundalini Herbalism?</h2>
+    <p>
+      Kundalini Herbalism is your resource for herbal wisdom, blending tradition and science. Start your journey to natural wellness here!
+    </p>
+  </div>
+</body>
+</html>
