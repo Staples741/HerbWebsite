@@ -12,6 +12,7 @@
       margin: 0;
       padding: 0;
     }
+
     .carousel-container {
       display: flex;
       flex-direction: row;
@@ -19,6 +20,7 @@
       justify-content: center;
       min-height: 100vh;
     }
+
     .carousel {
       display: flex;
       align-items: center;
@@ -30,26 +32,31 @@
       margin: 0 auto;
       perspective: 1200px;
     }
+
+    #carouselCards {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+    }
+
     .carousel-card {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
       width: 260px;
       height: 360px;
       background: #fff;
       border-radius: 18px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.13);
-      margin: 0 -60px;
-      position: relative;
-      transition: 
-        transform 0.4s cubic-bezier(.4,2,.6,1),
-        box-shadow 0.3s,
-        z-index 0s;
-      z-index: 1;
-      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
       opacity: 0.7;
       cursor: pointer;
+      overflow: hidden;
+      z-index: 1;
     }
+
     .carousel-card.selected {
       transform: scale(1.13) translateY(-20px);
       z-index: 3;
@@ -57,43 +64,41 @@
       opacity: 1;
       cursor: default;
     }
+
     .carousel-card.left,
     .carousel-card.right {
       z-index: 2;
       opacity: 0.85;
       filter: blur(0.5px);
     }
+
     .carousel-card a {
-  width: 100% !important;
-  height: 60%; /* Adjust as needed for image/text ratio */
-  display: block;
+      width: 100%;
+      height: 60%;
+      display: block;
     }
 
     .carousel-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 0;
-      display: block;
     }
+
     .carousel-info {
-      width: 100%;
       height: 40%;
-      padding: 24px 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 20px;
       background: #eaf6ea;
       color: #333;
-      font-size: 1.05em;
+      font-size: 1em;
       border-left: 2px solid #4a7c59;
     }
+
     .carousel-title {
-      font-size: 1.2em;
       font-weight: bold;
-      margin-bottom: 0.7em;
+      margin-bottom: 0.5em;
       color: #4a7c59;
     }
+
     .carousel-nav-btn {
       position: absolute;
       top: 50%;
@@ -107,42 +112,27 @@
       font-size: 2em;
       cursor: pointer;
       z-index: 10;
-      opacity: 0.85;
-      transition: background 0.2s;
     }
-    .carousel-nav-btn:hover {
-      background: #355c3a;
-    }
+
     .carousel-nav-btn.left {
       left: -60px;
     }
+
     .carousel-nav-btn.right {
       right: -60px;
     }
-    @media (max-width: 1100px) {
-      .carousel {
-        width: 98vw;
-      }
+
+    @media (max-width: 768px) {
       .carousel-card {
-        width: 200px;
-        height: 300px;
-        margin: 0 -40px;
+        width: 160px;
+        height: 240px;
       }
-    }
-    @media (max-width: 700px) {
-      .carousel {
-        width: 100vw;
-        height: 260px;
-      }
-      .carousel-card {
-        width: 120px;
-        height: 200px;
-        margin: 0 -20px;
-      }
+
       .carousel-info {
-        font-size: 0.95em;
-        padding: 10px 6px;
+        padding: 12px;
+        font-size: 0.9em;
       }
+
       .carousel-nav-btn {
         width: 36px;
         height: 36px;
@@ -151,11 +141,10 @@
         right: -30px;
       }
     }
-    
   </style>
 </head>
 <body>
-      <nav class="navbar">
+  <nav class="navbar">
     <ul class="nav-list">
       <li><a href="#">Home</a></li>
       <li><a href="#">About</a></li>
@@ -196,6 +185,7 @@
       <button class="search-button">Search</button>
     </div>
   </nav>
+  <h2>Herbs by Color</h2>
   <div class="carousel-container">
     <div class="carousel">
       <button class="carousel-nav-btn left" onclick="prevCard()" aria-label="Previous">&#8592;</button>
@@ -203,65 +193,73 @@
       <button class="carousel-nav-btn right" onclick="nextCard()" aria-label="Next">&#8594;</button>
     </div>
   </div>
+
   <script>
-    // Example data for 8 rectangles
     const cards = [
-      {
-        img: "images/herb1.jpg",
-        title: "Herb 1",
-        info: "Herb 1 is known for its calming properties and is often used in teas.",
-        link: "#"
-      },
-      {
-        img: "images/herb2.jpg",
-        title: "Herb 2",
-        info: "Herb 2 supports digestion and adds flavor to many dishes.",
-        link: "#"
-      },
-      {
-        img: "images/herb3.jpg",
-        title: "Herb 3",
-        info: "Herb 3 is a lemon-scented herb that helps reduce stress.",
-        link: "#"
-      },
-      {
-        img: "images/herb4.jpg",
-        title: "Herb 4",
-        info: "Herb 4 is used for its soothing effects on the skin.",
-        link: "#"
-      },
-      {
-        img: "images/herb5.jpg",
-        title: "Herb 5",
-        info: "Herb 5 is a classic culinary herb with a fresh aroma.",
-        link: "#"
-      },
-      {
-        img: "images/herb6.jpg",
-        title: "Herb 6",
-        info: "Herb 6 is valued for its immune-boosting properties.",
-        link: "#"
-      },
-      {
-        img: "images/herb7.jpg",
-        title: "Herb 7",
-        info: "Herb 7 is often used in traditional medicine for relaxation.",
-        link: "#"
-      },
-      {
-        img: "images/herb8.jpg",
-        title: "Herb 8",
-        info: "Herb 8 is a vibrant herb used in both food and teas.",
-        link: "#"
-      }
-    ];
+  {
+    img: "https://via.placeholder.com/300x180/91c788/ffffff?text=Herb+1",
+    title: "Red",
+    info: "Calming properties, used in teas.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #e57373 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/f7a072/ffffff?text=Herb+2",
+    title: "Orange",
+    info: "Supports digestion, great flavor.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #ffb74d 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/6a994e/ffffff?text=Herb+3",
+    title: "Yellow",
+    info: "Lemon-scented, reduces stress.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #fff176 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/ffb703/ffffff?text=Herb+4",
+    title: "Green",
+    info: "Soothing on the skin.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #81c784 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/118ab2/ffffff?text=Herb+5",
+    title: "Blue",
+    info: "Fresh aroma, classic culinary.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #64b5f6 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/ef476f/ffffff?text=Herb+6",
+    title: "Indigo",
+    info: "Boosts immunity.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #9575cd 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/ffd166/000000?text=Herb+7",
+    title: "Violet",
+    info: "Traditional relaxation aid.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #ba68c8 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/06d6a0/000000?text=Herb+8",
+    title: "Magenta",
+    info: "Vibrant and great in teas.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #f06292 60%, #000 100%)"
+  }
+];
 
     let selected = 0;
 
     function renderCarousel() {
+     document.body.style.background = cards[selected].bgColor || "#f8f8f8";
       const container = document.getElementById('carouselCards');
       container.innerHTML = '';
-      // Only show 3 cards: selected, and one before/after (with wrap)
       const total = cards.length;
       const prev = (selected - 1 + total) % total;
       const next = (selected + 1) % total;
@@ -273,7 +271,7 @@
         cardDiv.className = 'carousel-card' +
           (i === 1 ? ' selected' : i === 0 ? ' left' : ' right');
         cardDiv.innerHTML = `
-          <a href="${card.link}" style="width:50%;height:100%;display:block;">
+          <a href="${card.link}">
             <img src="${card.img}" alt="${card.title}">
           </a>
           <div class="carousel-info">
@@ -289,22 +287,32 @@
       selected = (selected - 1 + cards.length) % cards.length;
       renderCarousel();
     }
+
     function nextCard() {
       selected = (selected + 1) % cards.length;
       renderCarousel();
     }
 
-    // Optional: swipe support for mobile
+    // Swipe support for mobile
     let touchStartX = null;
-    document.getElementById('carouselCards').addEventListener('touchstart', function(e) {
+    const carouselCardsEl = document.getElementById('carouselCards');
+
+    carouselCardsEl.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
     });
-    document.getElementById('carouselCards').addEventListener('touchend', function(e) {
+
+    carouselCardsEl.addEventListener('touchend', (e) => {
       if (touchStartX === null) return;
       let touchEndX = e.changedTouches[0].screenX;
       if (touchEndX - touchStartX > 50) prevCard();
-      if (touchStartX - touchEndX > 50) nextCard();
+      else if (touchStartX - touchEndX > 50) nextCard();
       touchStartX = null;
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevCard();
+      else if (e.key === 'ArrowRight') nextCard();
     });
 
     renderCarousel();
