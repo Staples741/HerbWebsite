@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yellow Herbs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles.css">
+  <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.grid-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  text-align: center;
+  padding: 16px;
+}
+
+/* Specific placements */
+.item-a { grid-column: 1 / span 3; grid-row: 1; }
+
+
+.item-d { grid-column: 1 / span 2; grid-row: 2; }
+
+.item-f { grid-column: 3; grid-row: 2 / span 3; }
+
+.item-g { grid-column: 1; grid-row: 3; }
+.item-h { grid-column: 2; grid-row: 3 / span 2; }
+
+.item-j { grid-column: 3; grid-row: 4; }
+.item-k { grid-column: 2; grid-row: 5; }
+.item-l { grid-column: 3; grid-row: 5; }
+</style>
+</head>
+<body>
+     <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Herbs by Name</a></li>
+          <li><a href="#">Herbs by Chakra</a></li>
+          <li><a href="#">Herbs by Purpose</a></li>
+          <li><a href="#">Herbs by Chemistry</a></li>
+          <li><a href="#">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="#">Herbs by Distributor</a></li>
+          <li><a href="#">Herbs by Color</a></li>
+          <li><a href="#">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+<h1>Yellow herbs</h1>
+<div class="grid-container">
+  <div class="grid-item item-a">Banna</div>
+
+  <div class="grid-item item-d">Pine Pollen</div>
+  
+  <div class="grid-item item-f">Pineapple</div>
+  <div class="grid-item item-g">Ginger</div>
+  <div class="grid-item item-h">St. John's Wort</div>
+  <div class="grid-item item-j">J</div>
+  <div class="grid-item item-k">K</div>
+  <div class="grid-item item-l">L</div>
+</div>
+  </body>

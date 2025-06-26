@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Herb Profiles Snake Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+    .profile-list {
+      max-width: 800px;
+      margin: 2em auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+    .profile-item {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.5em;
+    }
+    .profile-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .profile-img-link {
+      display: block;
+      min-width: 100px;
+      min-height: 100px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      transition: box-shadow 0.2s;
+    }
+    .profile-img-link:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .profile-img-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-info h3 {
+      margin: 0 0 0.5em 0;
+      font-size: 1.3em;
+      color: #4a7c59;
+    }
+    .profile-info p {
+      margin: 0;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+     <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Herbs by Name</a></li>
+          <li><a href="#">Herbs by Chakra</a></li>
+          <li><a href="#">Herbs by Purpose</a></li>
+          <li><a href="#">Herbs by Chemistry</a></li>
+          <li><a href="#">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="#">Herbs by Distributor</a></li>
+          <li><a href="#">Herbs by Color</a></li>
+          <li><a href="#">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+
+section class="hero-section">
+    <img src="your-hero-image.jpg" alt="Herbal Banner" class="hero-image">
+    <div class="hero-text">
+      <h1>Kundalini Herbalism</h1>
+      <p>Explore the world of herbs and their connection to chakras, health, and wellness.</p>
+    </div>
+
+
+  <div class="profile-list">
+    <div class="profile-item">
+      <a class="profile-img-link" href="RootChakraProfile.html">
+        <img src="images/RootChakra.jpg" alt="Root Chakra">
+      </a>
+      <div class="profile-info">
+        <h3><a href="RootChakraProfile.html">Root Chakra Herbs</a></h3>
+        <p>Lavender is known for its calming scent and is often used in teas and essential oils for relaxation and sleep support.</p>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <a class="profile-img-link" href="SacralChakraProfile.html">
+        <img src="images/SacralChakra.jpg" alt="Sacral Chakra">
+      </a>
+      <div class="profile-info">
+        <h3><a href="SacralChakraProfile.html">Sacral Chakra Herbs</a></h3>
+        <p>Mint is a refreshing herb used to aid digestion and add flavor to a variety of dishes and beverages.</p>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <a class="profile-img-link" href="SolarPlexusChakraProfile.html">
+        <img src="images/SolarPlexusChakra.jpg" alt="Solar Plexus Chakra">
+      </a>
+      <div class="profile-info">
+        <h3><a href="LemonBalmProfile.html">Solar Plexus Chakra Herbs</a></h3>
+        <p>Lemon Balm is a lemon-scented herb that helps reduce stress and anxiety, and is commonly used in herbal teas.</p>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <a class="profile-img-link" href="HeartChakraProfile.html">
+        <img src="images/HeartChakra.jpg" alt="Heart Chakra">
+      </a>
+      <div class="profile-info">
+        <h3><a href="HeartChakraProfile.html">Heart Chakra Herbs</a></h3>
+        <p>Lavender is known for its calming scent and is often used in teas and essential oils for relaxation and sleep support.</p>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <a class="profile-img-link" href="ThroatChakraProfile.html">
+        <img src="images/ThroatChakra.jpg" alt="Throat Chakra">
+      </a>
+      <div class="profile-info">
+        <h3><a href="ThroatChakraProfile.html">Throat Chakra Herbs</a></h3>
+        <p>Mint is a refreshing herb used to aid digestion and add flavor to a variety of dishes and beverages.</p>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <a class="profile-img-link" href="ThirdEyeChakraProfile.html">
+        <img src="images/ThirdEyeChakra.jpg" alt="Third Eye Chakra">
+      </a>
+      <div class="profile-info">
+        <h3><a href="ThirdEyeChakraProfile.html">Third Eye Chakra Herbs</a></h3>
+        <p>Lemon Balm is a lemon-scented herb that helps reduce stress and anxiety, and is commonly used in herbal teas.</p>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <a class="profile-img-link" href="CrownChakraProfile.html">
+        <img src="images/CrownChakra.jpg" alt="Crown Chakra">
+      </a>
+      <div class="profile-info">
+        <h3><a href="CrownChakraProfile.html">Crown Chakra Herbs</a></h3>
+        <p>Lavender is known for its calming scent and is often used in teas and essential oils for relaxation and sleep support.</p>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <a class="profile-img-link" href="SoulStarChakraProfile.html">
+        <img src="images/lemonbalm.jpg" alt="Lemon Balm">
+      </a>
+      <div class="profile-info">
+        <h3><a href="LemonBalmProfile.html">Soul Star Chakra</a></h3>
+        <p>Lemon Balm is a lemon-scented herb that helps reduce stress and anxiety, and is commonly used in herbal teas.</p>
+      </div>
+    </div>
+
+    <div class="profile-item">
+      <a class="profile-img-link" href="MouthofGodChakraProfile.html">
+        <img src="images/lavender.jpg" alt="Lavender">
+      </a>
+      <div class="profile-info">
+        <h3><a href="LavenderProfile.html">Mouth of God Chakra</a></h3>
+        <p>Lavender is known for its calming scent and is often used in teas and essential oils for relaxation and sleep support.</p>
+      </div>
+    </div>
+
+   
+
+
+    <!-- Add more profiles as needed -->
+  </div>
+</body>
+</html>

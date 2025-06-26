@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monograph Layout</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  background: url('background-monograph.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e003e; /* deep plum text */
+}
+
+.page {
+  width: 90vmin;
+  height: 90vmin;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 0 25px rgba(128, 0, 128, 0.3);
+  border: 5px solid #c71585; /* medium violet-red */
+}
+
+.header {
+  height: 10%;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 1vh 0;
+  background-color: #8a2be2; /* blue violet */
+  color: white;
+  letter-spacing: 2px;
+}
+
+.content-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65%;
+  padding: 1vh 0;
+}
+
+.side-img {
+  width: 20%;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid #dc143c; /* crimson */
+  border-radius: 8px;
+}
+
+.center-img {
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+  border: 6px solid #da70d6; /* orchid */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(219, 112, 147, 0.7);
+}
+
+.paragraph {
+  height: 20%;
+  padding: 1vh 2vw;
+  background-color: #e6e6fa; /* lavender */
+  overflow: auto;
+  font-size: 1em;
+  border-top: 3px solid #8b008b; /* dark magenta */
+}
+
+</style>
+</head>
+<body>
+      <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="HomePage.html">Home</a></li>
+      <li><a href="AboutLibraryShopSigninPages/AboutPage.html">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="HerbGroupings/Herbs by Name/HerbsbyName.html">Herbs by Name</a></li>
+          <li><a href="HerbGroupings/Herbs by Chakra/SnakeList.html">Herbs by Chakra</a></li>
+          <li><a href="HerbGroupings/Herbs by Purpose/HerbsbyPurpose.html">Herbs by Purpose</a></li>
+          <li><a href="HerbGroupings/Herbs by Chemistry/FacetedStyle.html">Herbs by Chemistry</a></li>
+          <li><a href="HerbGroupings/Herbs by Ailment/Herbs by Ailment.html">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="HerbGroupings/HerbsbyDistributorsPage.html">Herbs by Distributor</a></li>
+          <li><a href="HerbGroupings/Herbs by Color/RectProfile.html">Herbs by Color</a></li>
+          <li><a href="HerbGroupings/Herbs by Class/BarGroup.html">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Chakras&Kundalini/Chakras.html">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+  <div class="page">
+    <div class="header">Monograph Title</div>
+    <div class="content-row">
+      <img src="left.jpg" class="side-img" alt="Left image">
+      <img src="center.jpg" class="center-img" alt="Center monograph">
+      <img src="right.jpg" class="side-img" alt="Right image">
+    </div>
+    <div class="paragraph">
+      <p>This is the paragraph text for the monograph description. It should align well and balance the composition visually.</p>
+    </div>
+  </div>
+</body>
+</html>
