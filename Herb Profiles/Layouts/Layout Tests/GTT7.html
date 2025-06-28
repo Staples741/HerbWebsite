@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <title>Genesis Triangle</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: Arial, sans-serif;
       background: #10d874;
@@ -17,93 +11,50 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
-
-    .genesis-triangle {
-      position: relative;
-      width: 400px;
-      height: 400px;
+    svg {
+      display: block;
+      margin: auto;
+      max-width: 90vw;
+      height: auto;
     }
-
-    .triangle {
-      width: 150px;
-      height: 130px;
-      position: absolute;
-      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      color: white;
+    a polygon {
+      cursor: pointer;
+      transition: filter 0.2s;
+    }
+    a:hover polygon {
+      filter: brightness(1.15);
+    }
+    text {
+      pointer-events: none;
       font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
-    }
-
-    .triangle:hover {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
-
-    .triangle a {
-      color: white;
-      text-decoration: none;
-      font-size: 1em;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 0.5em 1em;
-      border-radius: 5px;
-    }
-
-    /* Individual triangle positions */
-    .t1 {
-      background-image: url('https://images.unsplash.com/photo-1615486362679-6db1c736db78?fit=crop&w=400&q=80');
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .t2 {
-      background-image: url('https://images.unsplash.com/photo-1550418290-a8d86ad674b8?fit=crop&w=400&q=80');
-      bottom: 0;
-      left: 0;
-    }
-
-    .t3 {
-      background-image: url('https://images.unsplash.com/photo-1506806732259-39c2d0268443?fit=crop&w=400&q=80');
-      bottom: 0;
-      right: 0;
-    }
-
-    .t4 {
-      background-image: url('https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?fit=crop&w=400&q=80');
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(180deg);
-      z-index: 2;
-    }
-
-    @media (max-width: 500px) {
-      .genesis-triangle {
-        width: 90vw;
-        height: 90vw;
-      }
-
-      .triangle {
-        width: 40vw;
-        height: 35vw;
-      }
+      text-shadow: 1px 1px 4px #000;
     }
   </style>
 </head>
 <body>
-
-<div class="genesis-triangle">
-  <div class="triangle t1"><a href="#leafy">Leafy Greens</a></div>
-  <div class="triangle t2"><a href="#sprouts">Sprouts</a></div>
-  <div class="triangle t3"><a href="#stems">Stems</a></div>
-  <div class="triangle t4"><a href="#seaweed">Seaweed & Algae</a></div>
-</div>
-
+  <svg viewBox="0 0 400 346" width="400" height="346">
+    <!-- Top triangle (Leafy Greens) -->
+    <a href="#leafy">
+      <polygon points="200,0 300,173 100,173" fill="#4caf50"/>
+      <text x="200" y="60" text-anchor="middle" fill="white" font-size="18" font-family="Arial" dy="0.3em">Leafy Greens</text>
+    </a>
+    <!-- Left triangle (Sprouts) -->
+    <a href="#sprouts">
+      <polygon points="100,173 200,346 0,346" fill="#2196f3"/>
+      <text x="80" y="260" text-anchor="middle" fill="white" font-size="16" font-family="Arial" dy="0.3em">Sprouts</text>
+    </a>
+    <!-- Right triangle (Stems) -->
+    <a href="#stems">
+      <polygon points="300,173 400,346 200,346" fill="#ff9800"/>
+      <text x="320" y="260" text-anchor="middle" fill="white" font-size="16" font-family="Arial" dy="0.3em">Stems</text>
+    </a>
+    <!-- Center triangle (Seaweed & Algae) -->
+    <a href="#seaweed">
+      <polygon points="100,173 300,173 200,346" fill="#009688"/>
+      <text x="200" y="230" text-anchor="middle" fill="white" font-size="16" font-family="Arial" dy="0.3em">Seaweed & Algae</text>
+    </a>
+  </svg>
 </body>
 </html>
