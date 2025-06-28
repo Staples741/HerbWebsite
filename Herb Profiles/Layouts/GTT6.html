@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Genesis Triangle 2</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  body {
+  background: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.triangle-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.triangle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.triangle-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.triangle-item:hover img {
+  transform: scale(1.1);
+}
+
+.triangle-item.middle img {
+  transform: rotate(180deg);
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.bottom-row .triangle-item {
+  width: 100px;
+}
+</style>
+</head>
+<body>
+  <div class="triangle-wrapper">
+    <!-- Row 1 -->
+    <a href="#" class="triangle-item top">
+      <img src="leafy.jpg" alt="Leafy Greens" />
+      <span>Leafy Greens</span>
+    </a>
+
+    <!-- Row 2 (middle inverted triangle) -->
+    <a href="#" class="triangle-item middle">
+      <img src="seaweed.jpg" alt="Seaweed & Algae" />
+      <span>Seaweed & Algae</span>
+    </a>
+
+    <!-- Row 3 -->
+    <div class="bottom-row">
+      <a href="#" class="triangle-item bottom-left">
+        <img src="stems.jpg" alt="Stems" />
+        <span>Stems</span>
+      </a>
+      <a href="#" class="triangle-item bottom-right">
+        <img src="sprouts.jpg" alt="Sprouts" />
+        <span>Sprouts</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
