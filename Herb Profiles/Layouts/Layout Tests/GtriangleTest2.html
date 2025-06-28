@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genesis Triangle</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body {
+      margin: 0;
+      background: #93cc9b;
+      font-family: Arial, sans-serif;
+     
+    }
+
+    .triangle-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: 40px auto 0 auto;
+    }
+
+    .triangle {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .triangle:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .triangle span {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 5px black;
+      font-size: 0.9em;
+    }
+
+    /* Positioning triangles */
+    .leafy {
+      top: 0;
+      left: 125px;
+      background-color: #1e932d;
+      background-image: url('https://via.placeholder.com/150x150?text=Leafy+Greens');
+    }
+
+    .stems {
+      top: 130px;
+      left: 0;
+      background-color: blue;
+      background-image: url('https://via.placeholder.com/150x150?text=Stems');
+    }
+
+    .sprouts {
+      top: 130px;
+      left: 250px;
+      background-color: aquamarine;
+      background-image: url('https://via.placeholder.com/150x150?text=Sprouts');
+    }
+
+    .seaweed {
+      top: 240px;
+      left: 125px;
+      background-color: black;
+      background-image: url('https://via.placeholder.com/150x150?text=Seaweed+%26+Algae');
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="HomePage.html">Home</a></li>
+      <li><a href="AboutLibraryShopSigninPages/AboutPage.html">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="HerbGroupings/Herbs by Name/HerbsbyName.html">Herbs by Name</a></li>
+          <li><a href="HerbGroupings/Herbs by Chakra/SnakeList.html">Herbs by Chakra</a></li>
+          <li><a href="HerbGroupings/Herbs by Purpose/HerbsbyPurpose.html">Herbs by Purpose</a></li>
+          <li><a href="HerbGroupings/Herbs by Chemistry/FacetedStyle.html">Herbs by Chemistry</a></li>
+          <li><a href="HerbGroupings/Herbs by Ailment/Herbs by Ailment.html">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="HerbGroupings/HerbsbyDistributorsPage.html">Herbs by Distributor</a></li>
+          <li><a href="HerbGroupings/Herbs by Color/RectProfile.html">Herbs by Color</a></li>
+          <li><a href="HerbGroupings/Herbs by Class/BarGroup.html">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="Chakras&Kundalini/Chakras.html">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+<div class="triangle-container">
+  <a href="#" class="triangle leafy"><span>Leafy greens</span></a>
+  <a href="#" class="triangle stems"><span>Stems</span></a>
+  <a href="#" class="triangle sprouts"><span>Sprouts</span></a>
+  <a href="#" class="triangle seaweed"><span>Seaweed & algae</span></a>
+</div>
+
+</body>
+</html>

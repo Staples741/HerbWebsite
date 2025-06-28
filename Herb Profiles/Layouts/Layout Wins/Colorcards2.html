@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Floating Horizontal Carousel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+  <style>
+    body {
+      background: #f8f8f8;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+   h2 {
+      text-align: center;
+      margin: 20px 0;
+      color: #333;
+    }
+    .carousel-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .carousel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 900px;
+      max-width: 98vw;
+      height: 400px;
+      margin: 0 auto;
+      perspective: 1200px;
+    }
+
+    #carouselCards {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .carousel-card {
+      display: flex;
+      flex-direction: column;
+      width: 260px;
+      height: 360px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+      transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+      opacity: 0.7;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .carousel-card.selected {
+      transform: scale(1.13) translateY(-20px);
+      z-index: 3;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+      opacity: 1;
+      cursor: default;
+    }
+
+    .carousel-card.left,
+    .carousel-card.right {
+      z-index: 2;
+      opacity: 0.85;
+      filter: blur(0.5px);
+    }
+
+    .carousel-card a {
+      width: 100%;
+      height: 60%;
+      display: block;
+    }
+
+    .carousel-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-info {
+      height: 40%;
+      padding: 20px;
+      background: #eaf6ea;
+      color: #333;
+      font-size: 1em;
+      border-left: 2px solid #4a7c59;
+    }
+
+    .carousel-title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      color: #4a7c59;
+    }
+
+    .carousel-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #4a7c59;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 2em;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .carousel-nav-btn.left {
+      left: -60px;
+    }
+
+    .carousel-nav-btn.right {
+      right: -60px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-card {
+        width: 160px;
+        height: 240px;
+      }
+
+      .carousel-info {
+        padding: 12px;
+        font-size: 0.9em;
+      }
+
+      .carousel-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3em;
+        left: -30px;
+        right: -30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Herbs by Name</a></li>
+          <li><a href="#">Herbs by Chakra</a></li>
+          <li><a href="#">Herbs by Purpose</a></li>
+          <li><a href="#">Herbs by Chemistry</a></li>
+          <li><a href="#">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="#">Herbs by Distributor</a></li>
+          <li><a href="#">Herbs by Color</a></li>
+          <li><a href="#">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+  <h2>Herbs by Color</h2>
+  <div class="carousel-container">
+    <div class="carousel">
+      <button class="carousel-nav-btn left" onclick="prevCard()" aria-label="Previous">&#8592;</button>
+      <div id="carouselCards"></div>
+      <button class="carousel-nav-btn right" onclick="nextCard()" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+
+  <script>
+    const cards = [
+  {
+    img: "https://via.placeholder.com/300x180/91c788/ffffff?text=Herb+1",
+    title: "Red",
+    info: "Calming properties, used in teas.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #e57373 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/f7a072/ffffff?text=Herb+2",
+    title: "Orange",
+    info: "Supports digestion, great flavor.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #ffb74d 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/6a994e/ffffff?text=Herb+3",
+    title: "Yellow",
+    info: "Lemon-scented, reduces stress.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #fff176 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/ffb703/ffffff?text=Herb+4",
+    title: "Green",
+    info: "Soothing on the skin.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #81c784 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/118ab2/ffffff?text=Herb+5",
+    title: "Blue",
+    info: "Fresh aroma, classic culinary.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #64b5f6 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/ef476f/ffffff?text=Herb+6",
+    title: "Indigo",
+    info: "Boosts immunity.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #9575cd 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/ffd166/000000?text=Herb+7",
+    title: "Violet",
+    info: "Traditional relaxation aid.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #ba68c8 60%, #000 100%)"
+  },
+  {
+    img: "https://via.placeholder.com/300x180/06d6a0/000000?text=Herb+8",
+    title: "Magenta",
+    info: "Vibrant and great in teas.",
+    link: "#",
+    bgColor: "linear-gradient(135deg, #fff 0%, #f06292 60%, #000 100%)"
+  }
+];
+
+    let selected = 0;
+
+    function renderCarousel() {
+     document.body.style.background = cards[selected].bgColor || "#f8f8f8";
+      const container = document.getElementById('carouselCards');
+      container.innerHTML = '';
+      const total = cards.length;
+      const prev = (selected - 1 + total) % total;
+      const next = (selected + 1) % total;
+      const show = [prev, selected, next];
+
+      show.forEach((idx, i) => {
+        const card = cards[idx];
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'carousel-card' +
+          (i === 1 ? ' selected' : i === 0 ? ' left' : ' right');
+        cardDiv.innerHTML = `
+          <a href="${card.link}">
+            <img src="${card.img}" alt="${card.title}">
+          </a>
+          <div class="carousel-info">
+            <div class="carousel-title">${card.title}</div>
+            <div>${card.info}</div>
+          </div>
+        `;
+        container.appendChild(cardDiv);
+      });
+    }
+
+    function prevCard() {
+      selected = (selected - 1 + cards.length) % cards.length;
+      renderCarousel();
+    }
+
+    function nextCard() {
+      selected = (selected + 1) % cards.length;
+      renderCarousel();
+    }
+
+    // Swipe support for mobile
+    let touchStartX = null;
+    const carouselCardsEl = document.getElementById('carouselCards');
+
+    carouselCardsEl.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carouselCardsEl.addEventListener('touchend', (e) => {
+      if (touchStartX === null) return;
+      let touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX - touchStartX > 50) prevCard();
+      else if (touchStartX - touchEndX > 50) nextCard();
+      touchStartX = null;
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevCard();
+      else if (e.key === 'ArrowRight') nextCard();
+    });
+
+    renderCarousel();
+  </script>
+</body>
+</html>

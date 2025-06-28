@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Genesis Triangle</title>
+  <style>
+    body {
+      background: #f0f8ff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .triangle-container {
+      position: relative;
+      width: 350px;
+      height: 350px;
+    }
+    .triangle-link {
+      position: absolute;
+      width: 120px;
+      text-align: center;
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    .triangle-link img {
+      width: 100px;
+      height: 100px;
+      border-radius: 16px;
+      border: 2px solid #4caf50;
+      background: #fff;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+    .leaves   { top: 0; left: 50%; transform: translate(-50%, 0); }
+    .stems    { top: 60%; left: 0; transform: translate(0, 0); }
+    .sprouts  { top: 60%; right: 0; transform: translate(0, 0); }
+    .seaweed  { top: 45%; left: 50%; transform: translate(-50%, 0) rotate(180deg); }
+    .seaweed img { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+  <div class="triangle-container">
+    <a href="#" class="triangle-link leaves">
+      <img src="https://via.placeholder.com/100x100?text=Leaves" alt="Leaves">
+      <div>Leaves</div>
+    </a>
+    <a href="#" class="triangle-link stems">
+      <img src="https://via.placeholder.com/100x100?text=Stems" alt="Stems">
+      <div>Stems</div>
+    </a>
+    <a href="#" class="triangle-link sprouts">
+      <img src="https://via.placeholder.com/100x100?text=Sprouts" alt="Sprouts">
+      <div>Sprouts</div>
+    </a>
+    <a href="#" class="triangle-link seaweed">
+      <img src="https://via.placeholder.com/100x100?text=Seaweed+%26+Algae" alt="Seaweed & Algae">
+      <div>Seaweed &amp; Algae</div>
+    </a>
+  </div>
+</body>
+</html>

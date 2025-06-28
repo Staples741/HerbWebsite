@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2Boxrow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .grid-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+      text-align: center;
+    }
+    .grid-item a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: 16px;
+    }
+    .grid-item img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      transition: transform 0.2s;
+    }
+    .grid-item a:hover img {
+      transform: scale(1.05);
+    }
+    .grid-caption {
+      font-size: 1em;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+    @media (max-width: 900px) {
+      .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Herbs by Name</a></li>
+          <li><a href="#">Herbs by Chakra</a></li>
+          <li><a href="#">Herbs by Purpose</a></li>
+          <li><a href="#">Herbs by Chemistry</a></li>
+          <li><a href="#">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="#">Herbs by Distributor</a></li>
+          <li><a href="#">Herbs by Color</a></li>
+          <li><a href="#">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+
+  <h1 style="text-align:center; margin-top:32px;">Herbs by Distributor</h1>
+  <div class="grid-container">
+    <div class="grid-item">
+      <a href="Distributor1.html">
+        <img src="images/distributor1.jpg" alt="Distributor 1">
+        <div class="grid-caption">Distributor 1</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor2.html">
+        <img src="images/distributor2.jpg" alt="Distributor 2">
+        <div class="grid-caption">Distributor 2</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor3.html">
+        <img src="images/distributor3.jpg" alt="Distributor 3">
+        <div class="grid-caption">Distributor 3</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor4.html">
+        <img src="images/distributor4.jpg" alt="Distributor 4">
+        <div class="grid-caption">Distributor 4</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor5.html">
+        <img src="images/distributor5.jpg" alt="Distributor 5">
+        <div class="grid-caption">Distributor 5</div>
+      </a>
+    </div>
+     <div class="grid-item">
+      <a href="Distributor1.html">
+        <img src="images/distributor1.jpg" alt="Distributor 1">
+        <div class="grid-caption">Distributor 1</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor2.html">
+        <img src="images/distributor2.jpg" alt="Distributor 2">
+        <div class="grid-caption">Distributor 2</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor3.html">
+        <img src="images/distributor3.jpg" alt="Distributor 3">
+        <div class="grid-caption">Distributor 3</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor4.html">
+        <img src="images/distributor4.jpg" alt="Distributor 4">
+        <div class="grid-caption">Distributor 4</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor5.html">
+        <img src="images/distributor5.jpg" alt="Distributor 5">
+        <div class="grid-caption">Distributor 5</div>
+      </a>
+    </div>
+     <div class="grid-item">
+      <a href="Distributor1.html">
+        <img src="images/distributor1.jpg" alt="Distributor 1">
+        <div class="grid-caption">Distributor 1</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor2.html">
+        <img src="images/distributor2.jpg" alt="Distributor 2">
+        <div class="grid-caption">Distributor 2</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor3.html">
+        <img src="images/distributor3.jpg" alt="Distributor 3">
+        <div class="grid-caption">Distributor 3</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor4.html">
+        <img src="images/distributor4.jpg" alt="Distributor 4">
+        <div class="grid-caption">Distributor 4</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor5.html">
+        <img src="images/distributor5.jpg" alt="Distributor 5">
+        <div class="grid-caption">Distributor 5</div>
+      </a>
+    </div>
+     <div class="grid-item">
+      <a href="Distributor1.html">
+        <img src="images/distributor1.jpg" alt="Distributor 1">
+        <div class="grid-caption">Distributor 1</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor2.html">
+        <img src="images/distributor2.jpg" alt="Distributor 2">
+        <div class="grid-caption">Distributor 2</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor3.html">
+        <img src="images/distributor3.jpg" alt="Distributor 3">
+        <div class="grid-caption">Distributor 3</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor4.html">
+        <img src="images/distributor4.jpg" alt="Distributor 4">
+        <div class="grid-caption">Distributor 4</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor5.html">
+        <img src="images/distributor5.jpg" alt="Distributor 5">
+        <div class="grid-caption">Distributor 5</div>
+      </a>
+    </div>
+     <div class="grid-item">
+      <a href="Distributor1.html">
+        <img src="images/distributor1.jpg" alt="Distributor 1">
+        <div class="grid-caption">Distributor 1</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor2.html">
+        <img src="images/distributor2.jpg" alt="Distributor 2">
+        <div class="grid-caption">Distributor 2</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor3.html">
+        <img src="images/distributor3.jpg" alt="Distributor 3">
+        <div class="grid-caption">Distributor 3</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor4.html">
+        <img src="images/distributor4.jpg" alt="Distributor 4">
+        <div class="grid-caption">Distributor 4</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor5.html">
+        <img src="images/distributor5.jpg" alt="Distributor 5">
+        <div class="grid-caption">Distributor 5</div>
+      </a>
+    </div>
+     <div class="grid-item">
+      <a href="Distributor1.html">
+        <img src="images/distributor1.jpg" alt="Distributor 1">
+        <div class="grid-caption">Distributor 1</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor2.html">
+        <img src="images/distributor2.jpg" alt="Distributor 2">
+        <div class="grid-caption">Distributor 2</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor3.html">
+        <img src="images/distributor3.jpg" alt="Distributor 3">
+        <div class="grid-caption">Distributor 3</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor4.html">
+        <img src="images/distributor4.jpg" alt="Distributor 4">
+        <div class="grid-caption">Distributor 4</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor5.html">
+        <img src="images/distributor5.jpg" alt="Distributor 5">
+        <div class="grid-caption">Distributor 5</div>
+      </a>
+    </div>
+     <div class="grid-item">
+      <a href="Distributor1.html">
+        <img src="images/distributor1.jpg" alt="Distributor 1">
+        <div class="grid-caption">Distributor 1</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor2.html">
+        <img src="images/distributor2.jpg" alt="Distributor 2">
+        <div class="grid-caption">Distributor 2</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor3.html">
+        <img src="images/distributor3.jpg" alt="Distributor 3">
+        <div class="grid-caption">Distributor 3</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor4.html">
+        <img src="images/distributor4.jpg" alt="Distributor 4">
+        <div class="grid-caption">Distributor 4</div>
+      </a>
+    </div>
+    <div class="grid-item">
+      <a href="Distributor5.html">
+        <img src="images/distributor5.jpg" alt="Distributor 5">
+        <div class="grid-caption">Distributor 5</div>
+      </a>
+    </div>
+    <!-- Add more grid-items as needed, every 5 will start a new row -->
+  </div>
+</body>
+</html>

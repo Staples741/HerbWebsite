@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flower Herbs Lists</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf9f3;
+      margin: 0;
+      padding: 0;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+    .tab {
+      padding: 10px 20px;
+      margin: 0 5px;
+      background: #ccc;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .tab.active {
+      background: #ffaaaa;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+    .tab-content.active {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .board-column {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .board {
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #aaa;
+    }
+    .board h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #333;
+    }
+    .board ul {
+      list-style: none;
+      padding: 0;
+    }
+    .board li {
+      padding: 5px;
+      cursor: pointer;
+      color: #444;
+    }
+    .board li:hover {
+      color: #d11a2a;
+    }
+    .circle-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #eee;
+      margin: 10px auto;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.3s ease-in-out;
+    }
+    .middle-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="color">Flowers by Color</div>
+    <div class="tab" data-tab="purpose">Flowers by Purpose</div>
+  </div>
+
+  <div id="color" class="tab-content active">
+    <div class="board-column">
+      <div class="board">
+        <h3>Red Flowers</h3>
+        <ul>
+          <li data-img="rose.jpg" data-link="#rose">Rose</li>
+          <li data-img="poppy.jpg" data-link="#poppy">Poppy</li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3>Yellow Flowers</h3>
+        <ul>
+          <li data-img="sunflower.jpg" data-link="#sunflower">Sunflower</li>
+          <li data-img="marigold.jpg" data-link="#marigold">Marigold</li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3>Blue Flowers</h3>
+        <ul>
+          <li data-img="bluebell.jpg" data-link="#bluebell">Bluebell</li>
+          <li data-img="hydrangea.jpg" data-link="#hydrangea">Hydrangea</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <div class="circle-pic" id="pic1"></div>
+      <div class="circle-pic" id="pic2"></div>
+      <div class="circle-pic" id="pic3"></div>
+    </div>
+
+    <div class="board-column">
+      <div class="board">
+        <h3>Pink Flowers</h3>
+        <ul>
+          <li data-img="tulip.jpg" data-link="#tulip">Tulip</li>
+          <li data-img="peony.jpg" data-link="#peony">Peony</li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3>White Flowers</h3>
+        <ul>
+          <li data-img="lily.jpg" data-link="#lily">Lily</li>
+          <li data-img="daisy.jpg" data-link="#daisy">Daisy</li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3>Purple Flowers</h3>
+        <ul>
+          <li data-img="lavender.jpg" data-link="#lavender">Lavender</li>
+          <li data-img="iris.jpg" data-link="#iris">Iris</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="purpose" class="tab-content">
+    <!-- Similar layout as above; change board titles and list items -->
+    <div class="board-column">
+      <div class="board">
+        <h3>Medicinal</h3>
+        <ul>
+          <li data-img="echinacea.jpg" data-link="#echinacea">Echinacea</li>
+          <li data-img="calendula.jpg" data-link="#calendula">Calendula</li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3>Aromatic</h3>
+        <ul>
+          <li data-img="chamomile.jpg" data-link="#chamomile">Chamomile</li>
+          <li data-img="mint.jpg" data-link="#mint">Mint</li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3>Decorative</h3>
+        <ul>
+          <li data-img="zinnia.jpg" data-link="#zinnia">Zinnia</li>
+          <li data-img="dahlia.jpg" data-link="#dahlia">Dahlia</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <div class="circle-pic" id="pic4"></div>
+      <div class="circle-pic" id="pic5"></div>
+      <div class="circle-pic" id="pic6"></div>
+    </div>
+
+    <div class="board-column">
+      <div class="board">
+        <h3>Spiritual</h3>
+        <ul>
+          <li data-img="sage.jpg" data-link="#sage">Sage</li>
+          <li data-img="frankincense.jpg" data-link="#frankincense">Frankincense</li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3>Edible</h3>
+        <ul>
+          <li data-img="nasturtium.jpg" data-link="#nasturtium">Nasturtium</li>
+          <li data-img="borage.jpg" data-link="#borage">Borage</li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3>Pollinator Friendly</h3>
+        <ul>
+          <li data-img="bee-balm.jpg" data-link="#bee-balm">Bee Balm</li>
+          <li data-img="coneflower.jpg" data-link="#coneflower">Coneflower</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tab functionality
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Hover image logic
+    document.querySelectorAll('li').forEach((item, index) => {
+      item.addEventListener('mouseover', () => {
+        const img = item.dataset.img;
+        const section = item.closest('.tab-content');
+        const circles = section.querySelectorAll('.circle-pic');
+        const target = circles[Math.floor(index / 2) % circles.length];
+        if (img) {
+          target.style.backgroundImage = `url('${img}')`;
+        }
+      });
+      item.addEventListener('click', () => {
+        const link = item.dataset.link;
+        if (link) {
+          window.location.href = link;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

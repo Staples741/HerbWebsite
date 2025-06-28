@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4x4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles.css">
+  <style>
+    body {
+      background: #f8f8f8;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .products-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 16px;
+      position: relative;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px 24px;
+      margin-bottom: 32px;
+      transition: transform 0.3s;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .product-img-link {
+      display: block;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+    }
+    .product-img-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+    }
+    .product-title {
+      background: #4a7c59;
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: 600;
+      padding: 14px 0;
+      text-align: center;
+      border-radius: 0 0 0 0;
+      letter-spacing: 1px;
+    }
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #4a7c59;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.5em;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s;
+      opacity: 0.85;
+    }
+    .nav-btn:hover {
+      background: #355c3a;
+    }
+    .nav-btn.left {
+      left: -22px;
+    }
+    .nav-btn.right {
+      right: -22px;
+    }
+    @media (max-width: 900px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-btn {
+        top: unset;
+        bottom: -60px;
+        left: 30%;
+        right: 30%;
+        transform: none;
+        margin: 0 10px;
+      }
+      .nav-btn.left {
+        left: 20%;
+        right: unset;
+      }
+      .nav-btn.right {
+        right: 20%;
+        left: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown">
+        <a href="#">Herbs</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Herbs by Name</a></li>
+          <li><a href="#">Herbs by Chakra</a></li>
+          <li><a href="#">Herbs by Purpose</a></li>
+          <li><a href="#">Herbs by Chemistry</a></li>
+          <li><a href="#">Herbs by Ailement</a></li>
+          <li><a href="#">Herbs by Geography</a></li>
+          <li><a href="#">Herbs by Distributor</a></li>
+          <li><a href="#">Herbs by Color</a></li>
+          <li><a href="#">Herbs by Class</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Chakras</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crown</a></li>
+          <li><a href="#">Third Eye</a></li>
+          <li><a href="#">Throat</a></li>
+          <li><a href="#">Heart</a></li>
+          <li><a href="#">Solar Plexus</a></li>
+          <li><a href="#">Sacral</a></li>
+          <li><a href="#">Root</a></li>
+          <li><a href="#">Soul Star</a></li>
+          <li><a href="#">Mouth of God</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Sign in</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-button">Search</button>
+    </div>
+  </nav>
+    <h1 style="text-align:center; margin-top:32px;">Red Herbs</h1>
+  <div class="products-container">
+    <button class="nav-btn left" onclick="prevProducts()" aria-label="Previous">&#8592;</button>
+    <button class="nav-btn right" onclick="nextProducts()" aria-label="Next">&#8594;</button>
+    <div class="products-grid" id="productsGrid">
+      <!-- Product cards will be injected here -->
+    </div>
+  </div>
+  <script>
+    // Example product data (replace with your own)
+    const products = [
+      { img: "images/product1.jpg", title: "Anxiety & Stress", link: "#" },
+      { img: "images/product2.jpg", title: "Libido & Fertility", link: "#" },
+      { img: "images/product3.jpg", title: "Exercise & Energy", link: "#" },
+      { img: "images/product4.jpg", title: "Diet & Cooking", link: "#" },
+      { img: "images/product5.jpg", title: "Blood sugar & Digestion", link: "#" },
+      { img: "images/product6.jpg", title: "idk", link: "#" },
+      { img: "images/product7.jpg", title: "Health & Immunity", link: "#" },
+      { img: "images/product8.jpg", title: "Detox & Longevity", link: "#" },
+      { img: "images/product9.jpg", title: "idk", link: "#" },
+      { img: "images/product10.jpg", title: "Memory & Focus", link: "#" },
+      { img: "images/product11.jpg", title: "Sleep & Insomnia", link: "#" },
+      { img: "images/product12.jpg", title: "Dreams & Recreation", link: "#" },
+      { img: "images/product13.jpg", title: "Mood & Emotions", link: "#" },
+      { img: "images/product14.jpg", title: "Skin & Beauty", link: "#" },
+      { img: "images/product15.jpg", title: "Pain Relief", link: "#" },
+      { img: "images/product16.jpg", title: "Respiratory Health", link: "#" },
+      { img: "images/product17.jpg", title: "Cardiovascular Health", link: "#" },
+      { img: "images/product18.jpg", title: "Digestive Health", link: "#" },
+      { img: "images/product19.jpg", title: "Hormonal Balance", link: "#" },
+      { img: "images/product20.jpg", title: "Joint & Muscle Support", link: "#" },
+      { img: "images/product21.jpg", title: "Immune Support", link: "#" },
+      { img: "images/product22.jpg", title: "Metabolic Health", link: "#" },
+      { img: "images/product23.jpg", title: "Nervous System Support", link: "#" },
+      { img: "images/product24.jpg", title: "Vision & Eye Health", link: "#" },
+      { img: "images/product25.jpg", title: "Oral Health", link: "#" },
+      { img: "images/product26.jpg", title: "Liver Health", link: "#" },
+      { img: "images/product27.jpg", title: "Kidney & Urinary Health", link: "#" },
+      { img: "images/product28.jpg", title: "Weight Management", link: "#" },
+        { img: "images/product29.jpg", title: "Stress Relief", link: "#" },
+        { img: "images/product30.jpg", title: "Cognitive Support", link: "#" },
+        { img: "images/product31.jpg", title: "Energy & Vitality", link: "#" },
+        { img: "images/product32.jpg", title: "Anti-inflammatory", link: "#" },
+        { img: "images/product33.jpg", title: "Antioxidant Support", link: "#" },
+        { img: "images/product34.jpg", title: "Gut Health", link: "#" },
+        { img: "images/product35.jpg", title: "Skin Health", link: "#" },
+        { img: "images/product36.jpg", title: "Hair & Nail Health", link: "#" },
+        { img: "images/product37.jpg", title: "Bone Health", link: "#" },
+        { img: "images/product38.jpg", title: "Allergy Relief", link: "#" }
+
+    ];
+    const productsPerPage = 16;
+    let currentPage = 0;
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      grid.innerHTML = '';
+      const start = currentPage * productsPerPage;
+      const end = Math.min(start + productsPerPage, products.length);
+      for (let i = start; i < end; i++) {
+        const p = products[i];
+        grid.innerHTML += `
+          <div class="product-card">
+            <a class="product-img-link" href="${p.link}">
+              <img src="${p.img}" alt="${p.title}">
+            </a>
+            <div class="product-title">${p.title}</div>
+          </div>
+        `;
+      }
+    }
+
+    function prevProducts() {
+      if (currentPage > 0) {
+        currentPage--;
+        renderProducts();
+      }
+    }
+
+    function nextProducts() {
+      if ((currentPage + 1) * productsPerPage < products.length) {
+        currentPage++;
+        renderProducts();
+      }
+    }
+
+    // Optional: swipe support for mobile
+    let touchStartX = null;
+    document.getElementById('productsGrid').addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    document.getElementById('productsGrid').addEventListener('touchend', function(e) {
+      if (touchStartX === null) return;
+      let touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX - touchStartX > 50) prevProducts();
+      if (touchStartX - touchEndX > 50) nextProducts();
+      touchStartX = null;
+    });
+
+    renderProducts();
+  </script>
+</body>
+</html>
