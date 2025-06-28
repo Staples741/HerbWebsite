@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slideshow Page</title>
+  <style>
+    .slideshow-container {
+      position: relative;
+      width: 400px;
+      margin: 40px auto 10px auto;
+    }
+    .slide-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 2;
+      user-select: none;
+    }
+    .arrow-btn.left {
+      left: 10px;
+    }
+    .arrow-btn.right {
+      right: 10px;
+    }
+    .slide-paragraph {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 1.1rem;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <button class="arrow-btn left" onclick="prevSlide()">&#8592;</button>
+    <img id="slide-img" class="slide-img" src="" alt="Slide">
+    <button class="arrow-btn right" onclick="nextSlide()">&#8594;</button>
+  </div>
+  <div class="slide-paragraph" id="slide-paragraph"></div>
+
+  <script>
+    const slides = [
+      {
+        img: "https://picsum.photos/id/1015/400/250",
+        text: "This is the first slide. Enjoy the beautiful scenery!"
+      },
+      {
+        img: "https://picsum.photos/id/1016/400/250",
+        text: "Here is the second slide. Nature at its best."
+      },
+      {
+        img: "https://picsum.photos/id/1018/400/250",
+        text: "Third slide: A peaceful river flows through the forest."
+      },
+      {
+        img: "https://picsum.photos/id/1020/400/250",
+        text: "Fourth slide: Mountains rise majestically in the distance."
+      },
+      {
+        img: "https://picsum.photos/id/1024/400/250",
+        text: "Fifth slide: A dog enjoys a sunny day outdoors."
+      }
+    ];
+
+    let current = 0;
+
+    function showSlide(idx) {
+      const slide = slides[idx];
+      document.getElementById('slide-img').src = slide.img;
+      document.getElementById('slide-paragraph').textContent = slide.text;
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    // Initialize
+    showSlide(current);
+  </script>
+</body>
+</html>

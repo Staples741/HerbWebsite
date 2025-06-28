@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Herbs by Chakra</title>
+  <title>Herbs by Distributor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,11 +14,11 @@
     }
     .grid-container {
       display: grid;
-  grid-template-columns: 1fr; /* Only one column */
-  gap: 24px;
-  max-width: 400px;           /* Optional: makes the column narrower */
-  margin: 40px auto;
-  padding: 0 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 16px;
     }
     .grid-item {
    background: #fff;
@@ -67,15 +67,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    .grid-item:nth-child(even) {
-  margin-left: 0; /* No margin for even items */
-  margin-right: auto; /* No margin for even items */
-}
-    .grid-item:nth-child(odd) {
-  margin-right: 0; /* No margin for odd items */
-  margin-left: auto; /* No margin for odd items */
-    }
-
   </style>
 </head>
 <body>
@@ -121,62 +112,51 @@
     </div>
   </nav>
 
-  <h1 style="text-align:center; margin-top:32px;">Herbs by Chakra</h1>
+  <h1 style="text-align:center; margin-top:32px;">Herbs by Distributor</h1>
   <div class="grid-container">
     <div class="grid-item">
       <a href="Distributor1.html">
         <img src="images/distributor1.jpg" alt="Distributor 1">
-        <div class="grid-caption">Root Chakra, Muladhara </div>
+        <div class="grid-caption">Distributor 1</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="Distributor2.html">
         <img src="images/distributor2.jpg" alt="Distributor 2">
-        <div class="grid-caption">Sacral Chakra, Svadhishthana</div>
+        <div class="grid-caption">Distributor 2</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="Distributor3.html">
         <img src="images/distributor3.jpg" alt="Distributor 3">
-        <div class="grid-caption">Solar Plexus Chakra, Manipura</div>
+        <div class="grid-caption">Distributor 3</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="Distributor4.html">
         <img src="images/distributor4.jpg" alt="Distributor 4">
-        <div class="grid-caption">Heart Chakra, Anahata </div>
+        <div class="grid-caption">Distributor 4</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="Distributor5.html">
         <img src="images/distributor5.jpg" alt="Distributor 5">
-        <div class="grid-caption">Throat Chakra,Vishuddha </div>
+        <div class="grid-caption">Distributor 5</div>
       </a>
     </div>
      <div class="grid-item">
       <a href="Distributor1.html">
         <img src="images/distributor1.jpg" alt="Distributor 1">
-        <div class="grid-caption">Third Eye Chakra, Ajna</div>
+        <div class="grid-caption">Distributor 1</div>
       </a>
     </div>
     <div class="grid-item">
       <a href="Distributor2.html">
         <img src="images/distributor2.jpg" alt="Distributor 2">
-        <div class="grid-caption">Crown Chakra, Sahashrara</div>
+        <div class="grid-caption">Distributor 2</div>
       </a>
     </div>
-    <div class="grid-item">
-      <a href="Distributor3.html">
-        <img src="images/distributor3.jpg" alt="Distributor 3">
-        <div class="grid-caption">8th Chakra, Soulstar Chakra</div>
-      </a>
-    </div>
-    <div class="grid-item">
-      <a href="Distributor4.html">
-        <img src="images/distributor4.jpg" alt="Distributor 4">
-        <div class="grid-caption">9nth Chakra, The Mouth of God Chakra</div>
-      </a>
-    </div>
+
    
     <!-- Add more grid-items as needed, every 5 will start a new row -->
   </div>
